@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <title>Laboratorio 2</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      background: linear-gradient(to right, #f0f8ff, #e6f7ff);
+      margin: 0;
+      padding: 20px;
+    }
+    h1 {
+      text-align: center;
+      color: #004080;
+    }
+    .container {
+      width: 90%;
+      margin: 20px auto;
+    }
+    .item {
+      margin: 10px 0;
+      padding: 10px;
+      background-color: #f9f9f9;
+      border: 1px solid #999;
+    }
+    input, select, button {
+      padding: 8px;
+      border: 1px solid #004080;
+      border-radius: 4px;
+      outline: none;
+    }
+    input:focus, select:focus {
+      border-color: #0080ff;
+      box-shadow: 0 0 5px #66b3ff;
+    }
+    button {
+      background-color: #004080;
+      color: white;
+      cursor: pointer;
+      transition: background-color 0.3s ease, transform 0.2s ease;
+    }
+    button:hover {
+      background-color: #0066cc;
+      transform: translateY(-2px);
+    }
+  </style>
+</head>
+<body>
+  <h1>Laboratorio 2 - Eventos en JavaScript</h1>
+  <div class="container">
+    <div class="item" id="click">Click me! (click event)</div>
+    <div class="item" id="hover">Hover over (mouseenter event)</div>
+    <div class="item" id="dblclick">Double-click here (dblclick event)</div>
+    
+    <div class="item"><input id="keydown" placeholder="Type here (keydown event)"></div>
+    <div class="item"><input id="focus" placeholder="Focus on (focus event)"></div>
+    <div class="item"><input id="blur" placeholder="Leave input (blur event)"></div>
+    
+    <div class="item">
+      <form id="submitForm">
+        <input type="text" placeholder="Submit form">
+        <button type="submit">Enviar</button>
+      </form>
+    </div>
+    <div class="item">
+      <select id="change">
+        <option value="">Seleccione...</option>
+        <option value="A">Opción A</option>
+        <option value="B">Opción B</option>
+      </select>
+    </div>
+  </div>
+
+  <script>
+    document.querySelector("#click").addEventListener("click", () => alert("Click detectado!"));
+    
+    document.querySelector("div#hover").addEventListener("mouseenter", () => alert("Hover detectado!"));
+    
+    document.getElementById("dblclick").addEventListener("dblclick", () => alert("Doble click detectado!"));
+    
+    document.querySelector("input[id='keydown']").addEventListener("keydown", () => console.log("Tecla presionada!"));
+    
+    const inputs = document.querySelectorAll(".item input");
+    inputs[1].addEventListener("focus", () => console.log("Input enfocado!"));
+    
+    document.querySelector(".item input[id='blur']").addEventListener("blur", () => console.log("Input desenfocado!"));
+    
+    document.querySelector("form#submitForm").addEventListener("submit", (e) => {
+      e.preventDefault();
+      alert("Formulario enviado!");
+    });
+    
+    document.querySelector("select.item").addEventListener("change", () => alert("Valor cambiado!"));
+
+    //LEA EL README XDXDXDXD
+  </script>
+</body>
+</html>

@@ -1,2 +1,6 @@
 # Laboratorio-2-programaci-n-4
 Aqui subire mi lab 2 de progra 4
+
+¡¡¡IMPORTANTE!!!
+
+LAS FUNCIONES QUE FUNCIONAN CON EL INPUT SE DEBEN VER EN LA CONSOLA DEL NAVEGADOR.
